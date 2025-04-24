@@ -7,7 +7,7 @@
         <div class="card p-4 shadow-sm">
             <div class="card-body">
                 <h2 class="card-title text-center fw-bold">Register</h2>
-            <form method="POST" accept="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="mb-3">
                     <label for="form-label">Username</label>
