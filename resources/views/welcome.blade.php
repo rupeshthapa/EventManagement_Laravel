@@ -58,34 +58,32 @@
 </div>
 
 
-
 <table class="table">
     <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Starting Time</th>
-        <th scope="col">Ending Time</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-        @foreach ($events as $event) 
         <tr>
-          <th scope="row">{{ $event->id }}</th>
-          <td>{{ $event->title }}</td>
-          <td>{{ $event->description }}</td>
-          <td>{{ $event->starting_time }}</td>
-          <td>{{ $event->ending_time }}</td>
-          <td><a href="#">Edit</a></td>
-            <td><form>
-                <button>Delete</button>
-                </form></td>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Starting Time</th>
+            <th scope="col">Ending Time</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach ($events as $event)
+        <tr>
+            <td>{{ $event->id }}</td>
+            <td>{{ $event->title }}</td>
+            <td>{{ $event->description }}</td>
+            <td>{{ $event->starting_time }}</td>
+            <td>{{ $event->ending_time }}</td>
+            <td><a href="#" class="btn btn-sm btn-warning">Edit</a></td>
+            <td><form><button class="btn btn-sm btn-danger">Delete</button></form></td>
         </tr>
         @endforeach
-    
+        
     </tbody>
-  </table>
+</table>
     
 @endsection
