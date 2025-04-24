@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/welcome', [PageController::class, 'welcome'])->name('welcome');
+Route::get('/welcome', [EventController::class, 'index'])->name('index');
 
 Route::get('/register', [PageController::class, 'routeRegister'])->name('rRegister');
 Route::post('/register', [FormController::class, 'register'])->name('register');
