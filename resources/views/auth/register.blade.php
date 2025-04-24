@@ -40,6 +40,7 @@
                 <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary">Register</button>
                 </div>
+                <p class="lead text-center">If you have an account <a href="{{ route('rLogin') }}">Register</a></p>
             </form>
             </div>
         </div>
