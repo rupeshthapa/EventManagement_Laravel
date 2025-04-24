@@ -22,3 +22,7 @@ Route::post('/register', [FormController::class, 'register'])->name('register');
 
 Route::get('/login', [PageController::class, 'routeLogin'])->name('rLogin');
 Route::post('/login', [FormController::class, 'login'])->name('login');
+
+Route::get('/logout', [FormController::class, 'logout'])->name('logout');
+
+Route::post('/welcome', [FormController::class, 'event'])->name('event');

@@ -9,6 +9,11 @@
                 @if (session('register'))
                     <p style="color: green;">{{session('register')}}</p>
                 @endif
+
+                @if (session('logout'))
+                <p style="color: red;">{{session('logout')}}</p>
+            @endif
+
                 <h2 class="card-title text-center fw-bold">Login</h2>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
