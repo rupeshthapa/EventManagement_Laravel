@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class FormController extends Controller
 {
@@ -50,6 +51,8 @@ class FormController extends Controller
             'starting_time' => $eventDetailsRequest['starting_time'],
             'ending_time' => $eventDetailsRequest['ending_time']
         ]);
-        return redirect()->route('welcome')->with('event', 'Event details added!');
+        $events = Event::all();
+        Session::flash('event','Event added!');
+        return view('welcome', compact('events'));
     }
 }

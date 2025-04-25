@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function(){
+    return view('auth.login');
+});
+
 Route::get('/index', [EventController::class, 'index'])->middleware(ValidedUser::class)->name('index');
 Route::get('/welcome', [PageController::class, 'welcome'])->name('welcome');
 
