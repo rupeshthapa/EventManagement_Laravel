@@ -27,9 +27,11 @@ class FormController extends Controller
         $loginFormRequest->validated();
         if(Auth::attempt([
             'email' => $loginFormRequest['email'],
-            'password' => $loginFormRequest['password']
-        ]));
-        return redirect()->route('welcome')->with('login', 'Login Successful!');
+            'password' => $loginFormRequest['password']])
+            ){
+            // return redirect()->route('welcomes')->with('login', 'Login Successful!');
+            return to_route('index')->with('login', 'Login Successful!');
+        }
       
     }
 

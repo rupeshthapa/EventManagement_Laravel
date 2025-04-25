@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/index', [EventController::class, 'index'])->name('index');
 Route::get('/welcome', [PageController::class, 'welcome'])->name('welcome');
-Route::get('/welcome', [EventController::class, 'index'])->name('index');
 
 Route::get('/register', [PageController::class, 'routeRegister'])->name('rRegister');
 Route::post('/register', [FormController::class, 'register'])->name('register');
@@ -28,3 +28,6 @@ Route::post('/login', [FormController::class, 'login'])->name('login');
 Route::get('/logout', [FormController::class, 'logout'])->name('logout');
 
 Route::post('/welcome', [FormController::class, 'event'])->name('event');
+
+Route::get('/edit/{id}', [EventController::class, 'edit'])->name('editEvent');
+Route::post('/update/{id}', [EventController::class, 'update'])->name('eventUpdate');
