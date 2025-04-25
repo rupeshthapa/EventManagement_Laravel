@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\PageController;
+use App\Http\Middleware\ValidedUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', [EventController::class, 'index'])->name('index');
+Route::get('/index', [EventController::class, 'index'])->middleware(ValidedUser::class)->name('index');
 Route::get('/welcome', [PageController::class, 'welcome'])->name('welcome');
 
 Route::get('/register', [PageController::class, 'routeRegister'])->name('rRegister');
