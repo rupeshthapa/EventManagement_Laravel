@@ -15,8 +15,12 @@
                     @endif
 
                     @if (session('update'))
-                        <p style="color: green;">{{session('update')}}</p>
+                        <p style="color: blue;">{{session('update')}}</p>
                     @endif
+
+                    @if (session('delete'))
+                    <p style="color: red;">{{session('delete')}}</p>
+                @endif
 
                     <h2 class="card-title text-center">Welcome {{Auth::user()->name}}</h2>
                     <a class="text-center" href="{{ route('logout') }}">Logout</a>
@@ -84,7 +88,12 @@
             <td>{{ $event->starting_time }}</td>
             <td>{{ $event->ending_time }}</td>
             <td><a href="{{ route('editEvent', $event->id) }}" class="btn btn-sm btn-warning">Edit</a></td>
-            <td><form><button class="btn btn-sm btn-danger">Delete</button></form></td>
+            <td>
+                <form method="POST" action="{{ route('delete', $event->id) }}">
+                    @csrf
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
         </tr>
         @endforeach
         

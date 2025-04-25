@@ -23,4 +23,10 @@ class EventController extends Controller
         return redirect()->route('index')->with('update', 'Edit Successful!');
 
     }
+
+    public function delete(string $id){
+        $event = Event::find($id);
+        $event->delete();
+        return redirect()->route('index')->with('delete', 'Deleted Successful!');
+    }
 }

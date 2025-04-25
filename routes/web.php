@@ -31,3 +31,5 @@ Route::post('/welcome', [FormController::class, 'event'])->name('event');
 
 Route::get('/edit/{id}', [EventController::class, 'edit'])->name('editEvent');
 Route::post('/update/{id}', [EventController::class, 'update'])->name('eventUpdate');
+
+Route::post('/delete/{id}', [EventController::class, 'delete'])->name('delete');
